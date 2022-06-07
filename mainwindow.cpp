@@ -18,8 +18,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-//QMessageBox::information(this,"..",programName);
-
 void MainWindow::on_pushButton_clicked()
 {
     QString location = "/home/" + user;
@@ -58,5 +56,8 @@ void MainWindow::on_pushButton_4_clicked()
     shortcut << "Icon=" + icon.toStdString()<<"\n";
     shortcut << "Name=" + programName.toStdString()<<"\n";
     shortcut << "Type=Application";
-}
 
+    shortcut.close();
+
+    QMessageBox::information(this,"..", "Desktop entry created.");
+}
