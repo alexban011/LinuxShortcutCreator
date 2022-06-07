@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <string>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -14,9 +15,11 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    QString user = "";
     QString executable = "";
     QString icon = "";
-    QString name = "";
+    QString programName = "";
+    QString destination = "";
 
 private slots:
     void on_pushButton_clicked();
@@ -24,6 +27,10 @@ private slots:
     void on_pushButton_2_clicked();
 
     void on_lineEdit_editingFinished();
+
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_4_clicked();
 
 private:
     Ui::MainWindow *ui;
