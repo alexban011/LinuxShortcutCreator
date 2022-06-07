@@ -15,11 +15,11 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    QString user = "";
+    QString user = getenv("USER");
     QString executable = "";
     QString icon = "";
-    QString programName = "";
-    QString destination = "";
+    QString programName = "Program";
+    QString destination = "/home/" + user + "/Desktop";
 
 private slots:
     void on_selectExecutable_clicked();

@@ -10,7 +10,6 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    user = getenv("USER");
 }
 
 MainWindow::~MainWindow()
@@ -47,6 +46,12 @@ void MainWindow::on_selectDestination_clicked()
 
 void MainWindow::on_generateEntry_clicked()
 {
+    if (executable == NULL)
+    {
+        QMessageBox::information(this,"..", "You need to select an executable!");
+        return;
+    }
+
     QString locationAndName = destination + "/" + programName + ".desktop";
     std::ofstream shortcut;
     shortcut.open(locationAndName.toStdString());
