@@ -22,15 +22,15 @@ public:
     QString destination = "";
 
 private slots:
-    void on_pushButton_clicked();
+    void on_selectExecutable_clicked();
 
-    void on_pushButton_2_clicked();
+    void on_selectIcon_clicked();
 
     void on_lineEdit_editingFinished();
 
-    void on_pushButton_3_clicked();
+    void on_selectDestination_clicked();
 
-    void on_pushButton_4_clicked();
+    void on_generateEntry_clicked();
 
 private:
     Ui::MainWindow *ui;

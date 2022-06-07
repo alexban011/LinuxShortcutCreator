@@ -18,16 +18,14 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-//QMessageBox::information(this,"..",programName);
-
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_selectExecutable_clicked()
 {
     QString location = "/home/" + user;
     executable = QFileDialog::getOpenFileName(this, "Select executable", location);
 }
 
 
-void MainWindow::on_pushButton_2_clicked()
+void MainWindow::on_selectIcon_clicked()
 {
     QString location = "/home/" + user;
     icon = QFileDialog::getOpenFileName(this, "Select icon", location);
@@ -38,7 +36,7 @@ void MainWindow::on_lineEdit_editingFinished()
     programName = ui->lineEdit->text();
 }
 
-void MainWindow::on_pushButton_3_clicked()
+void MainWindow::on_selectDestination_clicked()
 {
     QString location = "/home/" + user + "/Desktop";
     destination = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
@@ -47,7 +45,7 @@ void MainWindow::on_pushButton_3_clicked()
 }
 
 
-void MainWindow::on_pushButton_4_clicked()
+void MainWindow::on_generateEntry_clicked()
 {
     QString locationAndName = destination + "/" + programName + ".desktop";
     std::ofstream shortcut;
