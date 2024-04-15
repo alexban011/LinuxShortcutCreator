@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>251</width>
-    <height>284</height>
+    <width>258</width>
+    <height>289</height>
    </rect>
   </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Shortcut Creator</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="selectExecutable">
@@ -188,8 +191,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>251</width>
-     <height>22</height>
+     <width>258</width>
+     <height>23</height>
     </rect>
    </property>
   </widget>

@@ -46,10 +46,15 @@ void MainWindow::on_selectDestination_clicked()
 
 void MainWindow::on_generateEntry_clicked()
 {
-    if (executable == NULL)
+    if (executable.isEmpty())
     {
         QMessageBox::information(this,"..", "You need to select an executable!");
         return;
+    }
+
+    int result = access(executable.toStdString().c_str(), X_OK);
+    if(result != 0) {
+        QMessageBox::information(this, "..", "Warning: The selected executable does not have the required execution permissions.");
     }
 
     QString locationAndName = destination + "/" + programName + ".desktop";
